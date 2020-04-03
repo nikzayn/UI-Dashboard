@@ -5,13 +5,24 @@ export default class Home extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>We have no friends!</Text>
-                <Button
-                    title="Add some friends"
-                    onPress={() =>
-                        this.props.navigation.navigate('Friends')
-                    }
-                />
+                <Text>Welcome, Kumar</Text>
+                <View style={styles.card1}>
+                    <Text>rupee</Text>
+                    <Text>Total Due</Text>
+                    <Text>INR 35,8800.00</Text>
+                </View>
+                <View style={styles.card2}>
+                    <Text>rupee</Text>
+                    <Text>Total Due</Text>
+                    <Text>INR 35,8800.00</Text>
+                </View>
+                <Button title="Record Payment" onPress={() =>
+                    this.props.navigation.navigate('PaymentReports')
+                } />
+                <Button title="Oldest Invoice" />
+                <View>
+                    <Text>Chart Representation</Text>
+                </View>
             </View>
         );
     }
@@ -19,9 +30,14 @@ export default class Home extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 0,
         backgroundColor: '#fff',
-        alignItems: 'center',
         justifyContent: 'center',
     },
+    card1: {
+        backgroundColor: 'red'
+    },
+    card2: {
+        backgroundColor: 'yellow'
+    }
 });
