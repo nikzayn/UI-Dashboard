@@ -2,11 +2,15 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import Home from './Home';
-import Friends from './Friends';
+import PaymentReports from './PaymentReports';
+import Reports from './Reports';
+import Items from './Items';
 
 const AppNavigator = createStackNavigator({
     Home: { screen: Home },
-    Friends: { screen: Friends },
+    PaymentReports: { screen: PaymentReports },
+    Reports: { screen: Reports },
+    Items: { screen: Items }
 });
 
 export default createAppContainer(AppNavigator);
