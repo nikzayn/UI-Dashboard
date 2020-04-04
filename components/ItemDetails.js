@@ -2,17 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { Card, Divider } from 'react-native-elements'
 
-const users = [
-    {
-        item_name: 'Vedic Chai',
-        item_type: 'Product',
-        total_amount: '35,88800.00',
-        upcoming_due: '35,8800.00',
-        record_value: 'Record Payment',
-        invoice_value: 'Oldest Invoice',
-        invoice_days: '127 days'
-    },
-];
+import Edit from 'react-native-vector-icons/Entypo';
 
 export default class ItemDetails extends React.Component {
     render() {
@@ -22,7 +12,7 @@ export default class ItemDetails extends React.Component {
                     <View style={styles.items}>
                         <Text style={styles.symbol}>Vedic Chai</Text>
                         <Text style={styles.description}>Product</Text>
-                        <Text>/</Text>
+                        <Edit name="edit" size={25} />
                     </View>
                     <View style={styles.sku}>
                         <Text style={styles.sku_value}>SKU: 761253401987</Text>
@@ -54,7 +44,6 @@ export default class ItemDetails extends React.Component {
                         </View>
                     </View>
                 </Card>
-
             </View>
         );
     }

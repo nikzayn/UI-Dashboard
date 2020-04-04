@@ -25,9 +25,6 @@ export default class PaymentReports extends React.Component {
                         <Forward name="ios-arrow-forward" size={20} color="#69c0ff" />
                     </View>
                 </Card>
-                <View style={styles.my_reports}>
-                    <Button title="My Reports" onPress={() => this.props.navigation.navigate('Reports')} />
-                </View>
             </View>
         );
     }

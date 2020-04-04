@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
 
+import Down from 'react-native-vector-icons/Ionicons';
+import Filter from 'react-native-vector-icons/FontAwesome';
+
 import ItemDetails from './ItemDetails';
 
 export default class Items extends React.Component {
@@ -8,15 +11,18 @@ export default class Items extends React.Component {
         return (
             <ScrollView style={styles.container}>
                 <View style={styles.invoice}>
-                    <Text style={styles.invoice_value}>Sort by </Text>
-                    <Text style={styles.invoice_days}>Filter</Text>
+                    <View style={styles.sort_by}>
+                        <Text style={styles.invoice_value}>Sort by </Text>
+                        <Down name="ios-arrow-down" size={25} />
+                    </View>
+                    <View style={styles.sort_by}>
+                        <Filter name="filter" size={25} />
+                        <Text style={styles.invoice_days}>Filter</Text>
+                    </View>
                 </View>
                 <ItemDetails />
                 <ItemDetails />
                 <ItemDetails />
-                <View style={styles.add_item}>
-                    <Button title="Add Item"></Button>
-                </View>
             </ScrollView>
         );
     }
@@ -38,11 +44,14 @@ const styles = StyleSheet.create({
         fontWeight: "700"
     },
     invoice_days: {
-        color: '#ff7875',
         fontSize: 17,
-        fontWeight: "700"
+        fontWeight: "700",
+        margin: 3
     },
     add_item: {
         margin: 20
+    },
+    sort_by: {
+        flexDirection: 'row'
     }
 });

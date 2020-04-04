@@ -54,6 +54,10 @@ target 'uidashboard' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
   target 'uidashboardTests' do
     inherit! :complete
     # Pods for testing

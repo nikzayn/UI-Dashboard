@@ -49,12 +49,11 @@ export default class Reports extends React.Component {
                         </View>
                     </Card>
                     <View style={styles.tags}>
-                        <Button style={styles.tag_button} title="Get Daily Report"
-                            onPress={() => this.props.navigation.navigate('Items')} />
-                        <Button style={styles.tag_button} title="Get Monthly" />
-                        <Button style={styles.tag_button} title="Financial Year" />
-                        <Button style={styles.tag_button} title="Custom" />
-                        <Button style={styles.tag_button} title="More Reports" />
+                        <Button style={styles.tag_button} title="Get Daily Report" />
+                        <Button title="Get Monthly" />
+                        <Button title="Financial Year" />
+                        <Button title="Custom" />
+                        <Button title="More Reports" />
                     </View>
                 </ScrollView>
             </View>
@@ -126,11 +125,9 @@ const styles = StyleSheet.create({
     },
     tags: {
         flexDirection: 'row',
-        flex: 0.5,
-        margin: 15,
-        flexWrap: 'wrap',
+        justifyContent: 'space-evenly',
+        margin: 12,
+        flex: 1,
+        flexWrap: 'wrap'
     },
-    tag_button: {
-        backgroundColor: '#d9d9d9'
-    }
 });
