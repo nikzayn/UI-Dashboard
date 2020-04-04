@@ -1,41 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
+
+import ItemDetails from './ItemDetails';
 
 export default class Items extends React.Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Text>Sort By</Text>
-                <Text>Filter</Text>
-                <View>
-                    <Text>Vedic Chai (Product)</Text>
-                    <Text>SKU</Text>
-                    <Text>HSN Number</Text>
-                    <Text>Item Price</Text>
-                    <Text>Tax Rate</Text>
-                    <Text>KG</Text>
-                    <Text>Initial Stock</Text>
+            <ScrollView style={styles.container}>
+                <View style={styles.invoice}>
+                    <Text style={styles.invoice_value}>Sort by </Text>
+                    <Text style={styles.invoice_days}>Filter</Text>
                 </View>
-                <View>
-                    <Text>Vedic Chai (Product)</Text>
-                    <Text>SKU</Text>
-                    <Text>HSN Number</Text>
-                    <Text>Item Price</Text>
-                    <Text>Tax Rate</Text>
-                    <Text>KG</Text>
-                    <Text>Initial Stock</Text>
+                <ItemDetails />
+                <ItemDetails />
+                <ItemDetails />
+                <View style={styles.add_item}>
+                    <Button title="Add Item"></Button>
                 </View>
-                <View>
-                    <Text>Vedic Chai (Product)</Text>
-                    <Text>SKU</Text>
-                    <Text>HSN Number</Text>
-                    <Text>Item Price</Text>
-                    <Text>Tax Rate</Text>
-                    <Text>KG</Text>
-                    <Text>Initial Stock</Text>
-                </View>
-                <Button title="Add Item"></Button>
-            </View>
+            </ScrollView>
         );
     }
 }
@@ -44,7 +26,23 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
     },
+    invoice: {
+        flexDirection: 'row',
+        justifyContent: "space-between",
+        fontSize: 17,
+        margin: 15
+    },
+    invoice_value: {
+        fontSize: 17,
+        fontWeight: "700"
+    },
+    invoice_days: {
+        color: '#ff7875',
+        fontSize: 17,
+        fontWeight: "700"
+    },
+    add_item: {
+        margin: 20
+    }
 });

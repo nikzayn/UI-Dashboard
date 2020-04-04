@@ -1,9 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import { Card, Button } from 'react-native-elements'
+import { StyleSheet, Text, View, ScrollView, Button } from 'react-native';
+import { Card } from 'react-native-elements'
+import Rupee from 'react-native-vector-icons/FontAwesome';
+import Due from 'react-native-vector-icons/Ionicons';
+import Forward from 'react-native-vector-icons/Ionicons';
 
-
-// import charts from './charts.json';
+import Charts from './Charts';
 
 const users = [
     {
@@ -29,20 +31,19 @@ export default class Home extends React.Component {
                                 <Text style={styles.title}>Welcome, <Text style={styles.name}>{u.name}</Text></Text>
                                 <Card style={styles.card}>
                                     <View>
-                                        <Text style={styles.symbol}>₹</Text>
+                                        <Rupee name="rupee" size={30} style={styles.symbol} />
                                         <Text style={styles.description}>{u.description_first}</Text>
                                         <Text style={styles.total}>{u.total_amount}</Text>
                                     </View>
-
                                 </Card>
                                 <Card style={styles.card}>
                                     <View key={i}>
-                                        <Text style={styles.symbol}>₹</Text>
+                                        <Due name="ios-timer" size={30} style={styles.symbol} color="#ffe58f" />
                                         <Text style={styles.description}>{u.description_second}</Text>
                                         <Text style={styles.total}>{u.upcoming_due}</Text>
                                     </View>
                                 </Card>
-                                <Card>
+                                <Card containerStyle={styles.record}>
                                     <View>
                                         <Text style={styles.record_value}>{u.record_value}</Text>
                                     </View>
@@ -50,13 +51,15 @@ export default class Home extends React.Component {
                                 <Card>
                                     <View style={styles.invoice}>
                                         <Text style={styles.invoice_value}>{u.invoice_value}</Text>
-                                        <Text style={styles.invoice_days}>{u.invoice_days}</Text>
+                                        <View style={styles.days_info}>
+                                            <Text style={styles.invoice_days}>{u.invoice_days}</Text>
+                                            <Forward name="ios-arrow-forward" size={25} color="#ff7875" />
+                                        </View>
                                     </View>
                                 </Card>
-                                <Card>
-                                    <Text>Charts</Text>
-                                </Card>
-                                <Button style={styles.reports} title="Reports" onPress={() => this.props.navigation.navigate('PaymentReports')} />
+                                <View style={styles.chartContainer}>
+                                    <Charts />
+                                </View>
                             </ScrollView>
                         );
                     })
@@ -101,15 +104,35 @@ const styles = StyleSheet.create({
         color: '#ff7875',
         fontWeight: '700'
     },
+    record: {
+        backgroundColor: '#d9f7be'
+    },
     record_value: {
-        color: '#73d13d',
-        fontSize: 15,
+        color: '#52c41a',
+        fontSize: 17,
+        fontWeight: "700"
     },
     invoice: {
         flexDirection: 'row',
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        fontSize: 17,
+    },
+    invoice_value: {
+        fontSize: 17,
+        fontWeight: "700"
     },
     invoice_days: {
         color: '#ff7875',
+        fontSize: 17,
+        fontWeight: "700",
+        marginRight: 10
     },
+    days_info: {
+        flexDirection: 'row',
+    },
+    chartContainer: {
+        margin: 16,
+        borderWidth: 2,
+        borderColor: "#69c0ff",
+    }
 });
