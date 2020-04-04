@@ -13,7 +13,6 @@ import PaymentReports from './PaymentReports';
 import Reports from './Reports';
 import Items from './Items';
 
-
 const TabNavigator = createBottomTabNavigator({
     Home: {
         screen: Home,
@@ -55,7 +54,6 @@ const TabNavigator = createBottomTabNavigator({
 
 
 export default createAppContainer(TabNavigator);
-
 const styles = StyleSheet.create({
     icon: {
         color: '#69c0ff'
