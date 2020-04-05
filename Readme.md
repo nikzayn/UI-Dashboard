@@ -12,7 +12,7 @@
 - React Native Elements
 
 ## Demo
-![](https://gph.is/g/E0rjgR5)
+![](https://media.giphy.com/media/fYTla1dvI0xZ9vpo1q/giphy.gif)
 
 ## Install
 ```
